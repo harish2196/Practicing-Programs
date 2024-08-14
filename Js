@@ -1,0 +1,15 @@
+//Palindrome
+let word = prompt("Enter a word:");
+let cleanWord = word.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+let reversedWord = cleanWord.split('').reverse().join('');
+
+if (cleanWord === reversedWord) {
+    alert("It's a palindrome!");
+} else {
+    alert("It's not a palindrome.");
+}
+
+//Reverse String
+let str = prompt("Enter a string to reverse:");
+let reversedStr = str.split('').reverse().join('');
+alert("Reversed string: " + reversedStr);
