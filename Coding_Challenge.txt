@@ -1,0 +1,89 @@
+//Hello world
+
+var createHelloWorld = function() {
+    
+    return function(...args) {
+        return "Hello World"
+    }
+};
+
+//Counter 
+
+var createCounter = function(n) {
+    
+    return function() {
+        return n++;
+    };
+};
+
+//To Be or Not To Be
+
+
+var expect = function(val) {
+    return {
+        toBe:(val2)=>{
+            if(val === val2) return true;
+            else throw new Error("Not Equal");
+        },
+          notToBe: (val2) => {
+            if(val !== val2) return true;
+            else throw new Error("Equal");
+        }
+    }
+};
+
+//Counter II
+
+var createCounter = function(init) {
+  let presentCount=init
+  return{
+    increment:()=>++presentCount,
+    decrement:()=>--presentCount,
+    reset:()=>presentCount=init
+  }
+};
+
+//Apply Transform Over Each Element in Array
+
+var map = function(arr, fn) {
+     for(let i=0;i<arr.length;i++){
+        arr[i]=fn(arr[i],i);
+    }
+    return arr
+};
+
+// Return Length of Arguments Passed
+
+var argumentsLength = function(...args) {
+    return args.length;
+};
+
+//Add Two Promises
+
+var addTwoPromises = async function(promise1, promise2) {
+   return (await promise1) + (await promise2);  
+};
+
+//Deep Clone an Object
+
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+//Array Manipulation
+
+let numbers = [1, 2, 3, 4, 5];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled);    
+
+// setTimeout for Delayed Execution
+
+setTimeout(() => {
+    console.log('This message is displayed after 2 seconds');
+}, 2000);
+
+//Local Storage Usage:
+
+localStorage.setItem('username', 'JohnDoe');
+const username = localStorage.getItem('username');
+console.log(username);
